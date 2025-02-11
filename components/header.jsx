@@ -20,7 +20,7 @@ const Header = () => {
         </Link>
         <div className="flex items-ceter gap-4">
           <Link href='/project/create'>
-            <Button variant="destructive" className="flex items-center gap-2">
+            <Button variant="primary" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-700">
               <PenBox size={18} />
               <span>Create Project</span>
             </Button>
