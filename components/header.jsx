@@ -19,18 +19,18 @@ const Header = () => {
           />
         </Link>
         <div className="flex items-ceter gap-4">
-          <Link href='/project/create'>
-            <Button variant="primary" className="flex items-center gap-2 bg-blue-500 hover:bg-blue-700">
+          <Link href="/project/create">
+            <Button variant="destructive" className="flex items-center gap-2">
               <PenBox size={18} />
-              <span>Create Project</span>
+              <span className="hidden md:inline">Create Project</span>
             </Button>
           </Link>
+
           <SignedOut>
             <SignInButton forceRedirectUrl="/onboarding">
               <Button variant="outline">Login</Button>
             </SignInButton>
           </SignedOut>
-
           <SignedIn>
             <UserMenu />
           </SignedIn>
