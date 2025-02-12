@@ -122,7 +122,7 @@ export default function Home() {
             Ready to Transform Your Workflow?
           </h3>
           <p className="text-xl mb-12">
-            Join thosands of teams already using ZCRUM to streamline their projects and boost productivity.
+            Join thosands of teams already using Zcrum to streamline their projects and boost productivity.
           </p>
           <Link href="/onboarding">
             <Button size="lg" className="animate-bounce">Start for Free <ArrowRight className="ml-2 h-5 w-5"/></Button>
