@@ -11,7 +11,7 @@ export default async function ProjectPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-2 sm:px-4">
       <SprintCreationForm
         projectTitle={project.name}
         projectId={projectId}

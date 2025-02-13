@@ -76,7 +76,7 @@ export default function SprintCreationForm({
           onClick={() => setShowForm(!showForm)}
           variant={!showForm ? "default" : "destructive"}
         >
-          {!showForm ? "Create New Sprint" : "Cancel"}
+          {!showForm ? "New Sprint" : "Cancel"}
         </Button>
       </div>
       {showForm && (
@@ -84,9 +84,10 @@ export default function SprintCreationForm({
           <CardContent>
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="flex gap-4 items-end"
+              className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-end"
             >
-              <div className="flex-1">
+              {/* Sprint Name */}
+              <div className="flex-1 w-full">
                 <label
                   htmlFor="name"
                   className="block text-sm font-medium mb-1"
@@ -97,7 +98,7 @@ export default function SprintCreationForm({
                   id="name"
                   {...register("name")}
                   readOnly
-                  className="bg-slate-950"
+                  className="bg-slate-950 w-full"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-sm mt-1">
@@ -105,7 +106,9 @@ export default function SprintCreationForm({
                   </p>
                 )}
               </div>
-              <div className="flex-1">
+
+              {/* Sprint Duration */}
+              <div className="flex-1 w-full">
                 <label className="block text-sm font-medium mb-1">
                   Sprint Duration
                 </label>
@@ -136,14 +139,14 @@ export default function SprintCreationForm({
                         align="start"
                       >
                         <DayPicker
-                            classNames={{
-                              chevron: "fill-blue-500",
-                              range_start: "bg-blue-700 rounded-full",
-                              range_end: "bg-blue-700 rounded-full",
-                              range_middle: "bg-blue-400 rounded-full",
-                              day_button: "border-none rounded-full",
-                              today: "text-white", 
-                            }}
+                          classNames={{
+                            chevron: "fill-blue-500",
+                            range_start: "bg-blue-700 rounded-full",
+                            range_end: "bg-blue-700 rounded-full",
+                            range_middle: "bg-blue-400 rounded-full",
+                            day_button: "border-none rounded-full",
+                            today: "text-white",
+                          }}
                           mode="range"
                           disabled={[{ before: new Date() }]}
                           selected={dateRange}
@@ -159,7 +162,13 @@ export default function SprintCreationForm({
                   )}
                 />
               </div>
-              <Button type="submit" disabled={createSprintLoading}>
+
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                disabled={createSprintLoading}
+                className="w-full sm:w-auto"
+              >
                 {createSprintLoading ? "Creating..." : "Create Sprint"}
               </Button>
             </form>

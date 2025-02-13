@@ -22,7 +22,7 @@ export default async function ProjectList({ orgId }) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 sm:px-4">
       {projects.map((project) => (
         <Card key={project.id}>
           <CardHeader>
