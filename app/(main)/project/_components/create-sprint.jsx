@@ -76,7 +76,7 @@ export default function SprintCreationForm({
           onClick={() => setShowForm(!showForm)}
           variant={!showForm ? "default" : "destructive"}
         >
-          {!showForm ? "New Sprint" : "Cancel"}
+          {!showForm ? "Create Sprint" : "Cancel"}
         </Button>
       </div>
       {showForm && (

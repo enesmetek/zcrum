@@ -70,63 +70,57 @@ export default function CreateProjectPage() {
   }
 
   return (
-    <div className="container mx-auto px-96 py-10">
-      <h1 className="text-6xl text-center font-bold mb-8 gradient-title">
-        Create New Project
-      </h1>
+    <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-32 xl:px-96 py-10">
+  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold mb-8 gradient-title">
+    Create New Project
+  </h1>
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col space-y-4"
-      >
-        <div>
-          <Input
-            id="name"
-            {...register("name")}
-            className="bg-slate-950"
-            placeholder="Project Name"
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-          )}
-        </div>
-        <div>
-          <Input
-            id="key"
-            {...register("key")}
-            className="bg-slate-950"
-            placeholder="Project Key (Ex: RCYT)"
-          />
-          {errors.key && (
-            <p className="text-red-500 text-sm mt-1">{errors.key.message}</p>
-          )}
-        </div>
-        <div>
-          <Textarea
-            id="description"
-            {...register("description")}
-            className="bg-slate-950 h-28"
-            placeholder="Project Description"
-          />
-          {errors.description && (
-            <p className="text-red-500 text-sm mt-1">
-              {errors.description.message}
-            </p>
-          )}
-        </div>
-        {loading && (
-          <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />
-        )}
-        <Button
-          type="submit"
-          size="lg"
-          disabled={loading}
-          className="bg-blue-600 text-white hover:bg-blue-400"
-        >
-          {loading ? "Creating..." : "Create Project"}
-        </Button>
-        {error && <p className="text-red-500 mt-2">{error.message}</p>}
-      </form>
+  <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-4">
+    <div>
+      <Input
+        id="name"
+        {...register("name")}
+        className="bg-slate-950 w-full"
+        placeholder="Project Name"
+      />
+      {errors.name && (
+        <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+      )}
     </div>
+    <div>
+      <Input
+        id="key"
+        {...register("key")}
+        className="bg-slate-950 w-full"
+        placeholder="Project Key (Ex: RCYT)"
+      />
+      {errors.key && (
+        <p className="text-red-500 text-sm mt-1">{errors.key.message}</p>
+      )}
+    </div>
+    <div>
+      <Textarea
+        id="description"
+        {...register("description")}
+        className="bg-slate-950 w-full h-28"
+        placeholder="Project Description"
+      />
+      {errors.description && (
+        <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>
+      )}
+    </div>
+    {loading && <BarLoader className="mb-4" width={"100%"} color="#36d7b7" />}
+    <Button
+      type="submit"
+      size="lg"
+      disabled={loading}
+      className="bg-blue-600 text-white hover:bg-blue-400 w-full"
+    >
+      {loading ? "Creating..." : "Create Project"}
+    </Button>
+    {error && <p className="text-red-500 mt-2">{error.message}</p>}
+  </form>
+</div>
+
   );
 }
