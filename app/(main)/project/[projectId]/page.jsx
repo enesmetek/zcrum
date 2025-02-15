@@ -12,7 +12,7 @@ export default async function ProjectPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto px-2 sm:px-4">
+    <div className="container mx-auto">
       <SprintCreationForm
         projectTitle={project.name}
         projectId={projectId}
@@ -21,10 +21,11 @@ export default async function ProjectPage({ params }) {
       />
 
       {project.sprints.length > 0 ? (
-        <SprintBoard 
+        <SprintBoard
           sprints={project.sprints}
           projectId={projectId}
-          orgId={project.orgId}/>
+          orgId={project.organizationId}
+        />
       ) : (
         <div>Create a Sprint from button above</div>
       )}
