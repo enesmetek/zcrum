@@ -34,8 +34,6 @@ Zcrum is a project management application based on the **Scrum methodology**, de
 - **Drag & Drop:** @hello-pangea/dnd 🖱️
 - **Markdown Editor:** @uiw/react-md-editor 📝
 
-📸 _Screenshot Placeholder: Task Details Page_
-
 ---
 
 ## 🚀 Getting Started
